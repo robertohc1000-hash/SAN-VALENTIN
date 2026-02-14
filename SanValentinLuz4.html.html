@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Quieres ser mi San Valentín?</title>
+    <style>
+        body {
+            font-family: 'Dancing Script', cursive;
+            background: linear-gradient(135deg, rgba(255,154,158,0.5), rgba(254,207,239,0.5), rgba(255,236,210,0.5)), url('https://i.imgur.com/l027055.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            color: #d63384;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        h1 {
+            font-size: 4em; /* Más grande */
+            margin-bottom: 30px;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+            background: linear-gradient(45deg, #ff6b6b, #feca57, #d63384); /* Gradiente vistoso */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: fadeIn 2s ease-in; /* Animación de entrada */
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .buttons {
+            display: flex;
+            gap: 30px; /* Más espacio */
+            margin-top: 30px;
+        }
+        button {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2em; /* Más grande */
+            padding: 20px 40px; /* Más grande */
+            border: 3px solid #ff6b6b; /* Borde decorativo */
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.4s ease; /* Transición más suave */
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3); /* Sombra más intensa */
+        }
+        #yes {
+            background: linear-gradient(45deg, #ff6b6b, #feca57);
+            color: white;
+        }
+        #yes:hover {
+            transform: scale(1.2); /* Más grande al hover */
+            box-shadow: 0 8px 16px rgba(255,107,107,0.6); /* Brillo rosado */
+        }
+        #no {
+            background: linear-gradient(45deg, #a8e6cf, #dcedc8);
+            color: #333;
+            position: relative;
+        }
+        #no:hover {
+            transform: scale(0.7); /* Achicarlo más al hover */
+            box-shadow: 0 8px 16px rgba(168,230,207,0.6);
+        }
+        .floating-hearts {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        .floating-heart {
+            position: absolute;
+            font-size: 2em;
+            color: rgba(255,107,107,0.7);
+            animation: floatHearts 6s infinite linear;
+        }
+        @keyframes floatHearts {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+        }
+        .celebration {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255,154,158,0.8), rgba(254,207,239,0.8), rgba(255,236,210,0.8)), url('https://i.imgur.com/l027055.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+        }
+        .fireworks {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+        .firework {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #ff6b6b;
+            border-radius: 50%;
+            animation: explode 2s infinite;
+        }
+        @keyframes explode {
+            0% { transform: scale(0); opacity: 1; }
+            50% { transform: scale(1); opacity: 0.8; }
+            100% { transform: scale(0); opacity: 0; }
+        }
+        .hearts {
+            font-size: 5em; /* Más grande */
+            animation: float 3s infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        .invitation {
+            font-size: 2.5em; /* Más grande */
+            margin-top: 30px;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+            background: linear-gradient(45deg, #d63384, #ff6b6b); /* Gradiente vistoso */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="floating-hearts">
+        <!-- Corazones flotantes decorativos -->
+        <div class="floating-heart" style="left: 10%; animation-delay: 0s;">💖</div>
+        <div class="floating-heart" style="left: 20%; animation-delay: 1s;">❤️</div>
+        <div class="floating-heart" style="left: 30%; animation-delay: 2s;">💕</div>
+        <div class="floating-heart" style="left: 40%; animation-delay: 3s;">💓</div>
+        <div class="floating-heart" style="left: 50%; animation-delay: 4s;">💗</div>
+        <div class="floating-heart" style="left: 60%; animation-delay: 5s;">💖</div>
+        <div class="floating-heart" style="left: 70%; animation-delay: 6s;">❤️</div>
+        <div class="floating-heart" style="left: 80%; animation-delay: 7s;">💕</div>
+        <div class="floating-heart" style="left: 90%; animation-delay: 8s;">💓</div>
+    </div>
+    <h1>¿Quieres ser mi San Valentín?</h1>
+    <div class="buttons">
+        <button id="yes">¡Sí!</button>
+        <button id="no">No</button>
+    </div>
+
+    <div class="celebration" id="celebration">
+        <div class="fireworks" id="fireworks"></div>
+        <div class="hearts">❤️💖💕💓💗</div>
+        <div class="invitation">
+            ¡Feliz San Valentín, mi amor! Eres la persona más especial del mundo para mí. Te amo con todo mi corazón. 💕 Nuestra cita será el Sábado 14 de febrero a las 17:00 pm. Tipo de vestimenta, bonita como siempre.
+        </div>
+    </div>
+
+    <script>
+        const noButton = document.getElementById('no');
+        const yesButton = document.getElementById('yes');
+        const celebration = document.getElementById('celebration');
+        const fireworks = document.getElementById('fireworks');
+
+        // Función para mover el botón "No" aleatoriamente
+        noButton.addEventListener('mouseover', () => {
+            const x = Math.random() * (window.innerWidth - 200);
+            const y = Math.random() * (window.innerHeight - 100);
+            noButton.style.position = 'absolute';
+            noButton.style.left = `${x}px`;
+            noButton.style.top = `${y}px`;
+            noButton.style.transform = 'scale(0.7)'; // Achicarlo más
+        });
+
+        // Al hacer clic en "Sí", mostrar celebración
+        yesButton.addEventListener('click', () => {
+            document.querySelector('.buttons').style.display = 'none';
+            document.querySelector('h1').style.display = 'none';
+            document.querySelector('.floating-hearts').style.display = 'none'; // Ocultar corazones flotantes
+            celebration.style.display = 'flex';
+
+            // Crear fuegos artificiales
+            for (let i = 0; i < 20; i++) {
+                const firework = document.createElement('div');
+                firework.classList.add('firework');
+                firework.style.left = Math.random() * 100 + '%';
+                firework.style.top = Math.random() * 100 + '%';
+                firework.style.animationDelay = Math.random() * 2 + 's';
+                fireworks.appendChild(firework);
+            }
+        });
+    </script>
+</body>
+</html>
